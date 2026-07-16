@@ -16,7 +16,7 @@
     "html5-qrcode": "^2.3.8",
     "element-plus": "^2.8.1",
     "pinia": "^2.2.2",
-    "vite": "^8.1.4",
+    "vite": "^8.1.5",
     "vue": "^3.4.38",
     "vue-router": "^4.4.3"
   },
