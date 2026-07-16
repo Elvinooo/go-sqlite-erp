@@ -1,0 +1,25 @@
+server:
+  mode: release
+  host: 127.0.0.1
+  port: 18080
+
+database:
+  driver: sqlite
+  dsn: data/erp.db?_foreign_keys=on&_busy_timeout=5000
+
+jwt:
+  secret: change-this-jwt-secret-before-use
+  access_expire_minutes: 30
+  refresh_expire_hours: 24
+
+log:
+  level: info
+  filename: ./logs/app.log
+
+admin:
+  username: admin
+  password: admin888
+  real_name: System Administrator
+
+app:
+  demo_mode: true

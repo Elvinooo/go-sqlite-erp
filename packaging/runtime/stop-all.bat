@@ -1,0 +1,2 @@
+@echo off
+powershell -ExecutionPolicy Bypass -Command "$ports=@(18080,5173); $connections=Get-NetTCPConnection -State Listen -ErrorAction SilentlyContinue | Where-Object { $ports -contains $_.LocalPort }; $ownerIds=$connections | Select-Object -ExpandProperty OwningProcess -Unique; foreach ($ownerId in $ownerIds) { if ($ownerId -and $ownerId -ne $PID) { Stop-Process -Id $ownerId -ErrorAction SilentlyContinue } }"

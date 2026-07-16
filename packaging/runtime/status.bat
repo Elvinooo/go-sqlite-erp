@@ -1,0 +1,2 @@
+@echo off
+powershell -NoProfile -ExecutionPolicy Bypass -Command "$ports=@(18080,5173); foreach ($port in $ports) { $conn=Get-NetTCPConnection -LocalPort $port -State Listen -ErrorAction SilentlyContinue | Select-Object -First 1; if ($conn) { Write-Host \"port $port listening, pid=$($conn.OwningProcess)\" } else { Write-Host \"port $port stopped\" } }; try { Invoke-WebRequest -Uri http://127.0.0.1:18080/healthz -UseBasicParsing -TimeoutSec 3 | Select-Object -ExpandProperty Content } catch { Write-Host 'backend health check failed' }"

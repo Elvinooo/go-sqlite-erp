@@ -1,0 +1,52 @@
+# Local runtime config
+config.yaml
+*.local
+.env
+.env.*
+!.env.example
+!web/.env.example
+.env.local
+
+# SQLite data and uploaded files
+data/
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# Logs and local run artifacts
+logs/
+.run/
+*.log
+
+# Build output
+bin/
+dist/
+build/
+outputs/
+release/
+
+# Go
+*.exe
+*.test
+coverage.out
+coverage.html
+
+# Node / Vite
+node_modules/
+web/node_modules/
+web/dist/
+web/.env.local
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~

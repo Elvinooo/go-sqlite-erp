@@ -1,0 +1,45 @@
+const statusMap = {
+  active: '启用',
+  enabled: '启用',
+  disabled: '停用',
+  inactive: '停用',
+  normal: '正常',
+  warning: '预警',
+  frozen: '冻结',
+  draft: '草稿',
+  pending: '待处理',
+  processing: '处理中',
+  completed: '已完成',
+  complete: '已完成',
+  cancelled: '已取消',
+  canceled: '已取消',
+  paid: '已结清',
+  unpaid: '未收款',
+  partial: '部分收款',
+  overdue: '已逾期',
+  unconfirmed: '未确认',
+  confirmed: '已确认',
+  settled: '已结算',
+  income: '收入',
+  expense: '支出',
+  registered: '已登记',
+  detecting: '检测中',
+  repairing: '维修中',
+  waiting_pickup: '待取件',
+  unable_repair: '无法维修',
+  planning: '计划中',
+  construction: '施工中',
+  acceptance: '验收中',
+  accepted: '已验收',
+  paused: '已暂停',
+  cash: '现金',
+  wechat: '微信',
+  alipay: '支付宝',
+  bank: '银行卡',
+  other: '其他'
+}
+
+export function statusLabel(value) {
+  if (value === null || value === undefined || value === '') return '-'
+  return statusMap[String(value).trim()] || value
+}

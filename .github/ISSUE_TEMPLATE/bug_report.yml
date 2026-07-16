@@ -1,0 +1,58 @@
+name: 缺陷报告
+description: 报告可复现的功能、接口或部署问题
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: 请勿提交密码、令牌、数据库、真实客户资料或未脱敏日志。安全漏洞请使用 GitHub Security Advisory 私密报告。
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 问题描述
+      description: 清楚说明实际行为和预期行为。
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. 启动...
+        2. 打开...
+        3. 点击...
+        4. 出现...
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: 环境信息
+      placeholder: |
+        操作系统：
+        Go 版本：
+        Node.js 版本：
+        浏览器：
+        部署方式：源码 / Windows 运行包 / Linux 运行包
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 脱敏日志或截图
+      description: 粘贴必要信息前，请删除密码、令牌、个人资料和业务数据。
+      render: shell
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 我已搜索现有 Issue，未发现相同问题。
+          required: true
+        - label: 我已移除所有敏感信息和真实业务数据。
+          required: true
